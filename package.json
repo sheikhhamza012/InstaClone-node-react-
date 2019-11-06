@@ -1,0 +1,23 @@
+{
+  "name": "instacloneproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sheikhhamza012/InstaClone-node-react-.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sheikhhamza012/InstaClone-node-react-/issues"
+  },
+  "homepage": "https://github.com/sheikhhamza012/InstaClone-node-react-#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.7.8"
+  }
+}
