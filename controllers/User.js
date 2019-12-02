@@ -1,6 +1,6 @@
 const User= require('../models/User')
-const config = require('../constants/config')
-let jwt = require('jsonwebtoken');
+const config = require('config')
+const jwt = require('jsonwebtoken');
 
 module.exports={
     index : (req,res)=>{
@@ -10,12 +10,13 @@ module.exports={
 
     signup:(req,res)=>{
         const {username,password,email} = req.body
-        if(password.length<6||!(/\S+@\S+\.\S+/).test(email)){
-            res.send({error:true,msg:"validation failed:"+(password.length<6?"password must be more than 6 letters":"email invalid")})
+        const validate= User.validate(req.body)
+        if(validate.error){
+            res.send(validate)
         }else{  
           User.find({$or:[{username:username},{email:email}]},(e,d)=>{
             if(!d){
-                User.create(req.body).then((x)=>res.send({error:false,token:jwt.sign({username:x.username},config.secretKey,{expiresIn:'2400h'})})).catch((x)=>res.send(x))
+                User.create(req.body).then((x)=>res.send({error:false,token:jwt.sign({username:x.username},process.env[config.get('secretKey')],{expiresIn:'2400h'})})).catch((x)=>res.send(x))
             }else
                 res.send({error:true,msg:"user with this "+(d.username==username?"username":"email")+" exists"})
             })
@@ -29,11 +30,69 @@ module.exports={
         }else{
           User.find({$and:[{$or:[{username:username},{email:username}]},{password:password}]},(e,d)=>{
             if(d){
-                res.send({error:false,token:jwt.sign({username:d.username},config.secretKey,{expiresIn:'2400h'})})
+                res.send({error:false,token:jwt.sign({username:d.username},process.env[config.get('secretKey')],{expiresIn:'2400h'})})
             }else
                 res.send({error:true,msg:"username/email and password combination does not exist"})
             })
         }
+    },
+
+    updatePassword:(req,res)=>{
+        const {oldPassword,newPassword} = req.body
+        User.findUser(req.username,(e,d)=>{
+            if(d){
+                if(d.password==oldPassword&&d.password!=newPassword){
+                    d.password=newPassword
+                    d.save(e=>{
+                        if(e){
+                            return res.send({error:true,msg:e})
+                        }
+                        return res.send({error:false})
+                    })
+                }else{
+                    res.send({error:true,msg:d.password==oldPassword?"new password cant be old password":"old password did not match"})
+                }
+            }else{
+                res.send({error:true,msg:"user not found"})
+            }
+        })
+    },
+
+    follow:(req,res)=>{
+        if(req.username==req.params.username){
+            return res.send({error:true,msg:"cant follow yourself"})
+        }
+        User.findUser(req.username,(e,me)=>{
+            if(me){
+                User.findUser(req.params.username,(e,him)=>{
+                    if(him){
+                        if(!me.following.find((row)=>row==req.params.username)){
+                            me.following.push(req.params.username)
+                            him.followers.push(req.username)
+                            me.save(e=>{
+                                if(e){
+                                    return res.send({error:true,msg:e})
+                                }
+                                return res.send({error:false,user:me})
+                            })
+                            him.save(e=>{
+                                if(e){
+                                    return res.send({error:true,msg:e})
+                                }
+                                return res.send({error:false,user:me})
+                            })
+                       }else{
+                            res.send({error:true,msg:"user already followed"})
+                       }
+                    }else{
+                        res.send({error:true,msg:"user to be followed not found"})
+                    }
+                })
+            }else{
+                res.send({error:true,msg:"user not found"})
+            }
+        })
+
     }
 
 

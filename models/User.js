@@ -1,27 +1,51 @@
-const db=require('mongoose')
-db.connect('mongodb+srv://sheikhhamza012:lahore012@cluster0-qcvsy.mongodb.net/test?retryWrites=true&w=majority')
-    .then(()=>console.log("connected"))
-    .catch(err=>console.log(err))
+const db = require('mongoose')
+const Joi = require('Joi')
 const schema= new db.Schema({
-    username:{type:String,unique:true,required:[true,'username is required']},
-    email:{type:String,unique:true,required:[true,'email is required']},
-    password:{type:String,required:[true,'Password cant be empty']},
+    username:{type:String,unique:true,required:true},
+    email:{type:String,unique:true,required:true},
+    password:{type:String,required:true},
     posts:[],
     followers:[],
     following:[]
 })
 const User = db.model('User',schema)
 module.exports={
-    create:async(data)=>{
+    create:(data)=>{
         return new Promise((resolve,reject)=>{
-            var user= new User(data),obj = user.validateSync()
-            if(obj){
-                reject({error:true,msg:obj.message})
-            }
-                resolve(user.save())
+            var user= new User(data)
+                resolve(user.save(e=>reject(e)))
         })  
     },
     find:(v,callback)=>{
         return User.findOne(v,callback)
-    }
+    },
+    findUser:(v,callback)=>{
+        return User.findOne({username:v},callback)
+    },
+    updatePassword:(v,user)=>{
+        User.findOneAndUpdate({username:username},{password:v})
+    },
+    validate:(user) => {
+        const schema = {
+          username: Joi.string()
+            .min(5)
+            .max(20)
+            .required(),
+          email: Joi.string()
+            .min(5)
+            .max(255)
+            .required()
+            .email(),
+          password: Joi.string()
+            .min(5)
+            .max(255)
+            .required()
+        };
+        const validate=  Joi.validate(user, schema)
+        if(validate.error!==null){
+            return ({error:true,msg:validate.error.details[0].message})
+        }else{
+            return ({error:false})
+        }
+      }
 }
