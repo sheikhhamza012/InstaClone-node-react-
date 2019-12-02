@@ -93,6 +93,41 @@ module.exports={
             }
         })
 
+    },
+
+    unfollow:(req,res)=>{
+        User.findUser(req.username,(e,me)=>{
+            if(me){
+                User.findUser(req.params.username,(e,him)=>{
+                    if(him){
+                        let row=me.following.find((row)=>row==req.params.username)
+                        if(row){
+                            me.following.splice(me.following.indexOf(row),1)
+                            him.followers.splice(me.following.indexOf(req.username),1)
+                            me.save(e=>{
+                                if(e){
+                                    return res.send({error:true,msg:e})
+                                }
+                                return res.send({error:false,user:me})
+                            })
+                            him.save(e=>{
+                                if(e){
+                                    return res.send({error:true,msg:e})
+                                }
+                                return res.send({error:false,user:me})
+                            })
+                       }else{
+                            res.send({error:true,msg:"user not followed"})
+                       }
+                    }else{
+                        res.send({error:true,msg:"user to be unfollowed not found"})
+                    }
+                })
+            }else{
+                res.send({error:true,msg:"user not found"})
+            }
+        })
+
     }
 
 

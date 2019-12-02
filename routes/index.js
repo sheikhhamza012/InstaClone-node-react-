@@ -7,5 +7,6 @@ module.exports = (app)=>{
     app.post('/signup', UserCtrl.signup)
     app.post('/login',UserCtrl.login)
     app.post('/user/update/password',Authenticate.verifyToken,UserCtrl.updatePassword)
-    app.post('/user/follow/:username',Authenticate.verifyToken,UserCtrl.follow)
+    app.get('/user/follow/:username',Authenticate.verifyToken,UserCtrl.follow)
+    app.get('/user/unfollow/:username',Authenticate.verifyToken,UserCtrl.unfollow)
 }
