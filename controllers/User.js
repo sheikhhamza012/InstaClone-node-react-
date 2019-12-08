@@ -16,7 +16,9 @@ module.exports={
         }else{  
           User.find({$or:[{username:username},{email:email}]},(e,d)=>{
             if(!d){
-                User.create(req.body).then((x)=>res.send({error:false,token:jwt.sign({username:x.username},process.env[config.get('secretKey')],{expiresIn:'2400h'})})).catch((x)=>res.send(x))
+                User.create(req.body).then((x)=>{
+                    res.send({error:false,token:jwt.sign({username:x.username},process.env[config.get('secretKey')],{expiresIn:'2400h'})})
+                }).catch((x)=>res.send(x))
             }else
                 res.send({error:true,msg:"user with this "+(d.username==username?"username":"email")+" exists"})
             })

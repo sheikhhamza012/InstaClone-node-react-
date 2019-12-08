@@ -1,5 +1,5 @@
 const db = require('mongoose')
-const Joi = require('Joi')
+const Joi = require('joi')
 const schema= new db.Schema({
     username:{type:String,unique:true,required:true},
     email:{type:String,unique:true,required:true},
@@ -13,7 +13,7 @@ module.exports={
     create:(data)=>{
         return new Promise((resolve,reject)=>{
             var user= new User(data)
-                resolve(user.save(e=>reject(e)))
+                resolve(user.save())
         })  
     },
     find:(v,callback)=>{
@@ -47,5 +47,7 @@ module.exports={
         }else{
             return ({error:false})
         }
-      }
+      },
+      obj:User
+
 }
