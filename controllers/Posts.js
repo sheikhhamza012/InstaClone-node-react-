@@ -15,7 +15,29 @@ module.exports={
             Post.create({caption:caption,image:req.file.url,time:new Date(Date.now())}).then(d=>{   
                 User.findUser(req.username,(e,user)=>{
                 user.posts.shift(d._id)
-                user.save(e=>!e?res.send({error:false,obj:d}):next)
+                user.save(e=>{
+                    if(!e){
+                        new Promise((resolve,reject)=>{
+                            let i=0
+                            user.followers.map(follower=>{
+                                 User.findUser(follower,(e,follower)=>{
+                                     follower.feed.push(d._id)
+                                     follower.save(e=>{
+                                         if(e) return res.send({error:true,msg:e})
+                                         if(i==user.followers.length-1){
+                                             resolve()
+                                         } 
+                                        
+                                         i++
+                                     })
+                                 })
+                             })
+                        }).then(()=>res.send({error:false,obj:d}))
+                        // res.send({error:false,obj:d})
+                        return
+                    }
+                    next()
+                })
                })
              })
         }else

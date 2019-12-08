@@ -6,7 +6,8 @@ const schema= new db.Schema({
     password:{type:String,required:true},
     posts:[],
     followers:[],
-    following:[]
+    following:[],
+    feed:[]
 })
 const User = db.model('User',schema)
 module.exports={
