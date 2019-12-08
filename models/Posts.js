@@ -5,7 +5,7 @@ const schema= new db.Schema({
     image:{type:String},
     likes:[],
     comments:[{
-        user:{type:String},
+        username:{type:String},
         msg:{type:String},
         time : { type : Date, default: Date.now }
     }],

@@ -18,6 +18,9 @@ routes(app)
 app.use((err, req, res, next) => {
     res.status(err.status||500).send({error:err.error||true,msg:err.msg})
 });
+process.on('uncaughtException', (reason) => {
+    console.log('Unhandled Rejection at:', reason.stack || reason)
+})
 mongoose.connect(process.env[config.get('db')])
     .then(()=>console.log("connected"))
     .catch(err=>console.log(err))

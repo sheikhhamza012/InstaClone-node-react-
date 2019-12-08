@@ -7,11 +7,7 @@ const multer  = require('multer')
 const storage = multer.diskStorage({
     destination: function(req, file, cb) {
       cb(null, 'uploads/')
-    },
-    // filename: function(req, file, cb) {
-    //   console.log(file)
-    //   cb(null, file.originalname)
-    // }
+    }
   })
 const upload = multer({ storage:storage })
 module.exports = (app)=>{
@@ -25,4 +21,9 @@ module.exports = (app)=>{
     app.get('/posts/',Authenticate.verifyToken,PostCtrl.index)
     app.post('/posts/new',Authenticate.verifyToken, upload.single('image'),uploadfile,PostCtrl.new)
     app.get('/posts/:username',Authenticate.verifyToken,PostCtrl.userPosts)
+
+    app.get('/posts/:id/like',Authenticate.verifyToken,PostCtrl.like)
+    app.post('/posts/:id/comment/',Authenticate.verifyToken,PostCtrl.comment)
+    app.post('/posts/:id/comment/:cid/update/',Authenticate.verifyToken,PostCtrl.updateComment)
+    app.post('/posts/:id/comment/:cid/delete/',Authenticate.verifyToken,PostCtrl.deleteComment)
 }
