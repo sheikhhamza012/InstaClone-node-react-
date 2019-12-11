@@ -11,6 +11,7 @@
 		"95bdc71b-899d-bafe-1313-7ae94cc13791",
 		"25e228e0-7386-d39c-b8e1-55161b6a413b",
 		"6bfb1e53-4a45-8706-ca88-748c04672e1e",
+		"53c75465-53a4-d51c-6cf3-25e5913a4883",
 		"c08f9437-98a9-a7e4-0b63-18e727eac6eb",
 		"7488ddd2-fdd6-82cb-1847-2014df7b858b",
 		"d1b78391-cc98-aa9e-362d-bb460fbacbcb",
@@ -97,6 +98,44 @@
 			"collectionId": "76ec6662-5efe-8623-c90a-f722f17930bb",
 			"responses": [],
 			"rawModeData": "{\n\t\"msg\":\"hello\"\n}"
+		},
+		{
+			"id": "53c75465-53a4-d51c-6cf3-25e5913a4883",
+			"headers": "Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhbXphIiwiaWF0IjoxNTc1Nzg5NzMyLCJleHAiOjE1ODQ0Mjk3MzJ9.en_QxqjYze6BRtU-KMYfkhTwlMKrLxh9C9XgfxM4iHA\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhbXphIiwiaWF0IjoxNTc1Nzg5NzMyLCJleHAiOjE1ODQ0Mjk3MzJ9.en_QxqjYze6BRtU-KMYfkhTwlMKrLxh9C9XgfxM4iHA",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8888/posts/hamzaaaa",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1575798514258,
+			"name": "/posts",
+			"description": "feed",
+			"collectionId": "76ec6662-5efe-8623-c90a-f722f17930bb",
+			"responses": [],
+			"isFromCollection": true,
+			"collectionRequestId": "6bfb1e53-4a45-8706-ca88-748c04672e1e",
+			"rawModeData": ""
 		},
 		{
 			"id": "5f8dece4-d00e-f224-36a7-59d17cb04742",
