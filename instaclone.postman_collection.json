@@ -1,0 +1,508 @@
+{
+	"id": "76ec6662-5efe-8623-c90a-f722f17930bb",
+	"name": "instaclone",
+	"description": "",
+	"order": [
+		"ab195bc1-1805-c5a2-8a08-a8b122a220a2",
+		"7adad780-6430-3a77-de57-c0fa0f80f2c0",
+		"ed5050b7-75d4-edd6-cc21-e29b0372cc0a",
+		"f460c9e0-17ed-3aae-4aa4-f0c25c606194",
+		"5f8dece4-d00e-f224-36a7-59d17cb04742",
+		"95bdc71b-899d-bafe-1313-7ae94cc13791",
+		"25e228e0-7386-d39c-b8e1-55161b6a413b",
+		"6bfb1e53-4a45-8706-ca88-748c04672e1e",
+		"c08f9437-98a9-a7e4-0b63-18e727eac6eb",
+		"7488ddd2-fdd6-82cb-1847-2014df7b858b",
+		"d1b78391-cc98-aa9e-362d-bb460fbacbcb",
+		"a8c7ee7d-bdf2-d421-337c-65f7a4147f3e",
+		"e345e545-fc82-8937-7531-da07cd2273b0",
+		"40665d0c-3ffd-679d-8765-e142c6a0b9bf"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1575789570168,
+	"owner": "8363976",
+	"public": false,
+	"requests": [
+		{
+			"id": "25e228e0-7386-d39c-b8e1-55161b6a413b",
+			"headers": "Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhbXphIiwiaWF0IjoxNTc1Nzg5NzMyLCJleHAiOjE1ODQ0Mjk3MzJ9.en_QxqjYze6BRtU-KMYfkhTwlMKrLxh9C9XgfxM4iHA\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhbXphIiwiaWF0IjoxNTc1Nzg5NzMyLCJleHAiOjE1ODQ0Mjk3MzJ9.en_QxqjYze6BRtU-KMYfkhTwlMKrLxh9C9XgfxM4iHA",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8888/posts/hamzaaaa",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1575798514258,
+			"name": "/posts/:username",
+			"description": "",
+			"collectionId": "76ec6662-5efe-8623-c90a-f722f17930bb",
+			"responses": [],
+			"isFromCollection": true,
+			"collectionRequestId": "95bdc71b-899d-bafe-1313-7ae94cc13791",
+			"rawModeData": ""
+		},
+		{
+			"id": "40665d0c-3ffd-679d-8765-e142c6a0b9bf",
+			"headers": "Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhbXphIiwiaWF0IjoxNTc2MDUzNDgwLCJleHAiOjE1ODQ2OTM0ODB9.s0ybEKdUgS2BXJAFobzwj_0e5i0WPpioELTK0ObeeNA\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhbXphIiwiaWF0IjoxNTc2MDUzNDgwLCJleHAiOjE1ODQ2OTM0ODB9.s0ybEKdUgS2BXJAFobzwj_0e5i0WPpioELTK0ObeeNA",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8888/posts/5ded32d5e2f5362cfc087365/",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1576059512398,
+			"name": "/posts/:id",
+			"description": "",
+			"collectionId": "76ec6662-5efe-8623-c90a-f722f17930bb",
+			"responses": [],
+			"rawModeData": "{\n\t\"msg\":\"hello\"\n}"
+		},
+		{
+			"id": "5f8dece4-d00e-f224-36a7-59d17cb04742",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8888/user/unfollow/haamza",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1576061708299,
+			"name": "/user/follow/:username copy",
+			"description": "",
+			"collectionId": "76ec6662-5efe-8623-c90a-f722f17930bb",
+			"responses": [],
+			"rawModeData": "{\n\t\"username\":\"hamza\",\n\t\"email\":\"hamza@gmail.com\",\n\t\"password\":\"12345678\"\n\t\n}"
+		},
+		{
+			"id": "6bfb1e53-4a45-8706-ca88-748c04672e1e",
+			"headers": "Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhbXphIiwiaWF0IjoxNTc1Nzg5NzMyLCJleHAiOjE1ODQ0Mjk3MzJ9.en_QxqjYze6BRtU-KMYfkhTwlMKrLxh9C9XgfxM4iHA\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhbXphIiwiaWF0IjoxNTc1Nzg5NzMyLCJleHAiOjE1ODQ0Mjk3MzJ9.en_QxqjYze6BRtU-KMYfkhTwlMKrLxh9C9XgfxM4iHA",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8888/posts/hamzaaaa",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1575798514258,
+			"name": "/",
+			"description": "feed",
+			"collectionId": "76ec6662-5efe-8623-c90a-f722f17930bb",
+			"responses": [],
+			"isFromCollection": true,
+			"collectionRequestId": "25e228e0-7386-d39c-b8e1-55161b6a413b",
+			"rawModeData": ""
+		},
+		{
+			"id": "7488ddd2-fdd6-82cb-1847-2014df7b858b",
+			"headers": "Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhbXphIiwiaWF0IjoxNTc2MDUzNDgwLCJleHAiOjE1ODQ2OTM0ODB9.s0ybEKdUgS2BXJAFobzwj_0e5i0WPpioELTK0ObeeNA\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhbXphIiwiaWF0IjoxNTc2MDUzNDgwLCJleHAiOjE1ODQ2OTM0ODB9.s0ybEKdUgS2BXJAFobzwj_0e5i0WPpioELTK0ObeeNA",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8888/posts/5ded32d5e2f5362cfc087365/comment/",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1576053809492,
+			"name": "/posts/:id/comment",
+			"description": "",
+			"collectionId": "76ec6662-5efe-8623-c90a-f722f17930bb",
+			"responses": [],
+			"rawModeData": "{\n\t\"msg\":\"hello\"\n}"
+		},
+		{
+			"id": "7adad780-6430-3a77-de57-c0fa0f80f2c0",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8888/login",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1576061434286,
+			"name": "/user/update/password",
+			"description": "",
+			"collectionId": "76ec6662-5efe-8623-c90a-f722f17930bb",
+			"responses": [],
+			"isFromCollection": true,
+			"collectionRequestId": "ab195bc1-1805-c5a2-8a08-a8b122a220a2",
+			"rawModeData": "{\n\t\"username\":\"hamza\",\n\t\"password\":\"12345678\"\n}"
+		},
+		{
+			"id": "95bdc71b-899d-bafe-1313-7ae94cc13791",
+			"headers": "Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhbXphIiwiaWF0IjoxNTc1Nzg5NzMyLCJleHAiOjE1ODQ0Mjk3MzJ9.en_QxqjYze6BRtU-KMYfkhTwlMKrLxh9C9XgfxM4iHA\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhbXphIiwiaWF0IjoxNTc1Nzg5NzMyLCJleHAiOjE1ODQ0Mjk3MzJ9.en_QxqjYze6BRtU-KMYfkhTwlMKrLxh9C9XgfxM4iHA",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8888/posts/hamzaaaa",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1575798514258,
+			"name": "/posts/new",
+			"description": "",
+			"collectionId": "76ec6662-5efe-8623-c90a-f722f17930bb",
+			"responses": [],
+			"rawModeData": ""
+		},
+		{
+			"id": "a8c7ee7d-bdf2-d421-337c-65f7a4147f3e",
+			"headers": "Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhbXphIiwiaWF0IjoxNTc2MDUzNDgwLCJleHAiOjE1ODQ2OTM0ODB9.s0ybEKdUgS2BXJAFobzwj_0e5i0WPpioELTK0ObeeNA\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhbXphIiwiaWF0IjoxNTc2MDUzNDgwLCJleHAiOjE1ODQ2OTM0ODB9.s0ybEKdUgS2BXJAFobzwj_0e5i0WPpioELTK0ObeeNA",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8888/posts/5df0c6b94016e6123832b114/comment/5df0c7144016e6123832b116",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PATCH",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1576060990689,
+			"name": "/posts/:id/comment/:id",
+			"description": "",
+			"collectionId": "76ec6662-5efe-8623-c90a-f722f17930bb",
+			"responses": [],
+			"rawModeData": "{\n\t\"msg\":\"yoyo\"\n}"
+		},
+		{
+			"id": "ab195bc1-1805-c5a2-8a08-a8b122a220a2",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8888/login",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1576061434286,
+			"name": "/login",
+			"description": "",
+			"collectionId": "76ec6662-5efe-8623-c90a-f722f17930bb",
+			"responses": [],
+			"rawModeData": "{\n\t\"username\":\"hamza\",\n\t\"password\":\"12345678\"\n}"
+		},
+		{
+			"id": "c08f9437-98a9-a7e4-0b63-18e727eac6eb",
+			"headers": "Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhbXphIiwiaWF0IjoxNTc2MDUzNDgwLCJleHAiOjE1ODQ2OTM0ODB9.s0ybEKdUgS2BXJAFobzwj_0e5i0WPpioELTK0ObeeNA\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhbXphIiwiaWF0IjoxNTc2MDUzNDgwLCJleHAiOjE1ODQ2OTM0ODB9.s0ybEKdUgS2BXJAFobzwj_0e5i0WPpioELTK0ObeeNA",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8888/posts/5ded32d5e2f5362cfc087365/like/",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1576058694120,
+			"name": "/posts/:id/like",
+			"description": "",
+			"collectionId": "76ec6662-5efe-8623-c90a-f722f17930bb",
+			"responses": [],
+			"rawModeData": ""
+		},
+		{
+			"id": "d1b78391-cc98-aa9e-362d-bb460fbacbcb",
+			"headers": "Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhbXphIiwiaWF0IjoxNTc2MDUzNDgwLCJleHAiOjE1ODQ2OTM0ODB9.s0ybEKdUgS2BXJAFobzwj_0e5i0WPpioELTK0ObeeNA\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhbXphIiwiaWF0IjoxNTc2MDUzNDgwLCJleHAiOjE1ODQ2OTM0ODB9.s0ybEKdUgS2BXJAFobzwj_0e5i0WPpioELTK0ObeeNA",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8888/posts/5ded30d820e2851fe5cd2f67/comment/5df0c6d24016e6123832b115",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1576061415883,
+			"name": "/posts/:id/comment/:id",
+			"description": "",
+			"collectionId": "76ec6662-5efe-8623-c90a-f722f17930bb",
+			"responses": [],
+			"rawModeData": "{\n\t\"msg\":\"hello\"\n}"
+		},
+		{
+			"id": "e345e545-fc82-8937-7531-da07cd2273b0",
+			"headers": "Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhbXphIiwiaWF0IjoxNTc2MDUzNDgwLCJleHAiOjE1ODQ2OTM0ODB9.s0ybEKdUgS2BXJAFobzwj_0e5i0WPpioELTK0ObeeNA\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhbXphIiwiaWF0IjoxNTc2MDUzNDgwLCJleHAiOjE1ODQ2OTM0ODB9.s0ybEKdUgS2BXJAFobzwj_0e5i0WPpioELTK0ObeeNA",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8888/posts/5df0c6b94016e6123832b114/comment/5df0c7144016e6123832b116",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PATCH",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1576060990689,
+			"name": "/posts/:id",
+			"description": "",
+			"collectionId": "76ec6662-5efe-8623-c90a-f722f17930bb",
+			"responses": [],
+			"rawModeData": "{\n\t\"msg\":\"yoyo\"\n}"
+		},
+		{
+			"id": "ed5050b7-75d4-edd6-cc21-e29b0372cc0a",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8888/signup",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1575806370732,
+			"name": "/signup",
+			"description": "",
+			"collectionId": "76ec6662-5efe-8623-c90a-f722f17930bb",
+			"responses": [],
+			"rawModeData": "{\n\t\"username\":\"hamza\",\n\t\"email\":\"hamza@gmail.com\",\n\t\"password\":\"12345678\"\n\t\n}"
+		},
+		{
+			"id": "f460c9e0-17ed-3aae-4aa4-f0c25c606194",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8888/user/follow/haamza",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1576061623651,
+			"name": "/user/follow/:username",
+			"description": "",
+			"collectionId": "76ec6662-5efe-8623-c90a-f722f17930bb",
+			"responses": [],
+			"rawModeData": "{\n\t\"username\":\"hamza\",\n\t\"email\":\"hamza@gmail.com\",\n\t\"password\":\"12345678\"\n\t\n}"
+		}
+	]
+}
