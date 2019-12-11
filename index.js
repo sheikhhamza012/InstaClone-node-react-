@@ -25,6 +25,6 @@ mongoose.connect(process.env[config.get('db')])
     .then(()=>console.log("connected"))
     .catch(err=>console.log(err))
 
-app.listen(process.env.port||process.env.port||8888,'0.0.0.0',()=>{
+app.listen(process.env.PORT||process.env.port||8888,'0.0.0.0',()=>{
     console.log("server up on port "+process.env.PORT||8080+"...")
 })
