@@ -4,6 +4,7 @@ const schema= new db.Schema({
     caption:{type:String},
     image:{type:String},
     likes:[],
+    ownerName:String,
     comments:[{
         username:{type:String},
         msg:{type:String},

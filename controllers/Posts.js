@@ -41,7 +41,7 @@ module.exports={
     new:(req,res,next)=>{
         const {caption}=req.body
         if(caption.length>0){
-            Post.create({caption:caption,image:req.file.url,time:new Date(Date.now())}).then(d=>{   
+            Post.create({caption:caption,image:req.file.url,ownerName:req.username,time:new Date(Date.now())}).then(d=>{   
                 User.findUser(req.username,(e,user)=>{
                 user.posts.push(d._id)
                 user.save(e=>{
@@ -130,7 +130,7 @@ module.exports={
     comment:(req,res)=>{
         Post.obj.findById(req.params.id,(e,post)=>{
             if(post!=null&&e==null){
-                if(post.comments.find(x=>x.username==req.username)==null){
+                
                     post.comments.unshift({username:req.username,msg:req.body.msg,time:new Date(Date.now())})
                     post.save(e=>{
                         if(e==null) {
@@ -138,16 +138,96 @@ module.exports={
                         }else 
                         res.send({error:true,msg:e})
                     })
-                }
+                
                return
             }
             return res.send({error:true,msg:"post not found"})
         })
     },
-    updateComment=(req,res)=>{
-        
+    updateComment:(req,res)=>{
+        Post.obj.findById(req.params.id,(e,post)=>{
+            if(post!=null&&e==null){
+                let comment=post.comments.find(x=>x._id==req.params.cid)
+                if(comment){
+                    if(comment.username!=req.username){
+                        return res.send({error:true,msg:"you are not the author of this comment"})
+                    }
+                    comment.msg=req.body.msg
+                    post.save(err=>{
+                        if(err==null){
+                         return res.send({error:false,obj:post})
+                        } else
+                        return res.send({error:true, msg:"error occured"})
+                    })
+                }else
+                return res.send({error:true,msg:"comment not found"})
+            }else
+            return res.send({error:true,msg:"post does not exist"})
+        })
     },
-    deleteComment=(req,res)=>{
+    deleteComment:(req,res)=>{
+        Post.obj.findById(req.params.id,(e,post)=>{
+            if(post!=null&&e==null){
+                let comment=post.comments.find(x=>x._id==req.params.cid)
+                console.log(post )
+                if(comment){
+                    if(comment.username!=req.username){
+                        return res.send({error:true,msg:"you are not the author of this comment"})
+                    }
+                    post.comments.splice(post.comments.indexOf(comment),1)
+                    post.save(err=>{
+                        if(err==null){
+                         return res.send({error:false,obj:post})
+                        } else
+                        return res.send({error:true, msg:"error occured"})
+                    })
+                }else
+                return res.send({error:true,msg:"comment not found"})
+            }else
+            return res.send({error:true,msg:"post does not exist"})
+        })
+    },
+    deletePost:(req,res)=>{
+        Post.obj.findById(req.params.id,(e,post)=>{
+            if(post!=null&&e==null){
+                if(req.username!=post.ownerName){
+                    return res.send({error:true,msg:"you are not the author of this post "})
+                }
+                post.remove((e,d=>{
+                    if(e==null){
+                        User.findUser(req.username,(e,d)=>{
+                            if(d!=null&&e==null){
+                                d.posts.splice(d.posts.indexOf(d.posts.find(x=>x==req.params.id)),1)
+                                d.save(e=>{
+                                    if(e==null){
+                                        return res.send({error:false,msg:"post deleted "})
+                                    }
+                                    return res.send({error:true,msg:"post ref could not be deleted "})
+                                })
+                            }else return res.send({error:true,msg:"could not found user to del ref from his account"})
+                        })
+                    }else return res.send({error:true,msg:"could not delete this post"})
+                }))
+            }else
+            return res.send({error:true,msg:"post does not exist"})
+        })
+    },
+    updatePost:(req,res)=>{
+        Post.obj.findById(req.params.id,(e,post)=>{
+            if(post!=null&&e==null){
+                if(req.username!=post.ownerName){
+                    return res.send({error:true,msg:"you are not the author of this post "})
+                }
+                post.caption=req.body.caption
+                post.save(e=>{
+                    if(e==null){
+                        return res.send({error:false,obj:post})
+                    }
 
-    }
+                    return res.send({error:true,msg:"could not update"})
+                })
+            }else
+            return res.send({error:true,msg:"post does not exist"})
+        })
+    },
 }
